@@ -12,12 +12,20 @@ function checkSID() {
 
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
-  if (isNaN(candi) || candi < 1) {
+
+  if (isNaN(candi)) {
     return false;
-  } else {
+  } 
+  
+ let num = parseInt(candi);
+ 
+ if (!Number.isInteger(num) || num < 1 || num > 10) {
+	return false
+ 	}
+	
     return true;
   }
-}
+
 
 function validateForm(){
 	if(!checkSID()){
